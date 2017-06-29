@@ -1,13 +1,13 @@
 <div id="content" class="col-lg-10 col-lg-offset-1">
-  <header id="header" class="col-lg-12">
+  <header id="header" class="col-lg-12" [style.background]="header_color">
     <h1>
        {{title}}!!
     </h1>
   </header>
   <nav id="nav" class="col-lg-12">
     <ul>
-      <li><a href="#">Home</a></li>
-      <li><a href="#">Empleados</a></li>
+      <li><a [routerLink]="['/home']" [routerLinkActive]="['activado']">Home</a></li>
+      <li><a [routerLink]="['/empleados']" [routerLinkActive]="['activado']">Empleados</a></li>
       <li><a href="#">Agregar Empleado</a></li>
     </ul>
   </nav>
