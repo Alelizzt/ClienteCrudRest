@@ -1,2 +1,17 @@
 <h3>{{titulo}}</h3>
-<hr>
+<hr/>
+
+<div *ngIf="!empleados">
+  Cargando listado de empleados...
+</div>
+
+<div *ngIf="empleados">
+<ul>
+  <li *ngFor="let empleado of empleados">
+    {{empleado.id}}
+    <strong>{{empleado.nombre}}
+    {{empleado.apellidos}}</strong>
+    {{empleado.fechaNacimiento}}
+  </li>
+</ul>
+</div>
