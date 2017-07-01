@@ -12,9 +12,13 @@ export class EmpleadoAddComponent{
   public titulo: string;
   public empleado: Empleado;
 
-  constructor(){
+  constructor(
+      private _empleadoService: EmpleadoService,
+      private _route: ActivatedRoute,
+      private _router: Router
+    ){
     this.titulo = 'Añade un nuevo empleado';
-    this.empleado = new Empleado(0,'','',0);
+    this.empleado = new Empleado('','',0);
   }
 
   ngOnInit(){
@@ -23,5 +27,17 @@ export class EmpleadoAddComponent{
 
   onSubmit(){
     console.log(this.empleado);
+
+    this._empleadoService.addEmpleado(this.empleado).subscribe(
+      response => {
+        
+          this._router.navigate(['/home']);
+          //console.log(response);
+        
+      },
+      error => {
+          console.log('ERROR '+<any>error);
+      }
+      );
   }
 }

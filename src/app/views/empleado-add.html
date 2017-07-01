@@ -2,12 +2,7 @@
 <hr/>
 <form #formEmpleado="ngForm" (ngSubmit)="onSubmit()" class="col-lg-6" id="form-empleado">
 	<!--id autogenerado-->	
-	<label>
-		Id
-		<span *ngIf= "!id.valid && id.touched" class="label label-danger"> La identificación no es correcta </span>
-	</label>
-	<input type="text" #id="ngModel" name="id" [(ngModel)]="empleado.id" class="form-control" required pattern="[0-9]+" />
-
+	
 	<label>
 		Nombre
 		<span *ngIf= "!nombre.valid && nombre.touched" class="label label-danger"> El nombre es obligatorio </span>
