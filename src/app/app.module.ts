@@ -11,14 +11,15 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './components/home.component';
 import { ErrorComponent } from './components/error.component';
 import { EmpleadosListComponent } from './components/empleados-list.component';
-
+import { EmpleadoAddComponent } from './components/empleado-add.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     ErrorComponent,
-    EmpleadosListComponent
+    EmpleadosListComponent,
+    EmpleadoAddComponent
   ],
   imports: [
     BrowserModule,

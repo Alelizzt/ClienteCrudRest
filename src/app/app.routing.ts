@@ -5,12 +5,13 @@ import { Routes, RouterModule } from '@angular/router';
 import { HomeComponent } from './components/home.component';
 import { ErrorComponent } from './components/error.component';
 import { EmpleadosListComponent } from './components/empleados-list.component';
-
+import { EmpleadoAddComponent} from './components/empleado-add.component';
 
 const appRoutes: Routes = [
   {path: '', component: HomeComponent},
   {path: 'home', component: HomeComponent},
   {path: 'empleados', component: EmpleadosListComponent},
+  {path: 'crear-empleado', component: EmpleadoAddComponent},
   {path:'**', component: ErrorComponent}
 ];
 

@@ -1,0 +1,36 @@
+<h3>{{titulo}}</h3>
+<hr/>
+<form #formEmpleado="ngForm" (ngSubmit)="onSubmit()" class="col-lg-6" id="form-empleado">
+	<!--id autogenerado-->	
+	<label>
+		Id
+		<span *ngIf= "!id.valid && id.touched" class="label label-danger"> La identificación no es correcta </span>
+	</label>
+	<input type="text" #id="ngModel" name="id" [(ngModel)]="empleado.id" class="form-control" required pattern="[0-9]+" />
+
+	<label>
+		Nombre
+		<span *ngIf= "!nombre.valid && nombre.touched" class="label label-danger"> El nombre es obligatorio </span>
+	</label>
+	<input type="text" #nombre="ngModel" name="nombre" [(ngModel)]="empleado.nombre" class="form-control" required />
+	
+
+	<label>
+		Apellidos
+		<span *ngIf= "!apellidos.valid && apellidos.touched" class="label label-danger"> Los apellidos son obligatorios </span>
+	</label>
+	<input type="text" #apellidos="ngModel" name="apellidos" [(ngModel)]="empleado.apellidos" class="form-control" required />
+
+	<label>
+		Fecha de nacimiento
+		<span *ngIf= "!fechaNacimiento.valid && fechaNacimiento.touched" class="label label-danger"> La fecha es obligatoria </span>
+
+	</label>
+	<input type="text" #fechaNacimiento="ngModel" name="fechaNacimiento" [(ngModel)]="empleado.fechaNacimiento" class="form-control" required />
+<!-- 	<label>Imagen</label>
+	<input type="file" class="form-control" /> -->
+
+	<br>
+	<input type="submit" value="{{titulo}}" [disabled]="!formEmpleado.form.valid" class="btn btn-success">
+
+</form>
