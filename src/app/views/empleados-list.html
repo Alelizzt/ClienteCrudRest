@@ -6,12 +6,32 @@
 </div>
 
 <div *ngIf="empleados">
-<ul>
-  <li *ngFor="let empleado of empleados">
-    {{empleado.id}}
-    <strong>{{empleado.nombre}}
-    {{empleado.apellidos}}</strong>
-    {{empleado.fechaNacimiento}}
-  </li>
-</ul>
+	<div class="row">
+	  <div class="col-lg-3" *ngFor="let empleado of empleados">
+	  	<div class="thumbnail">
+	  	<!-- mostrar imagen si existe -->
+	  		<div *ngIf="empleado.imagen" class="imagen_container">
+	  			<img src="http://localhost:8080/api/CarpetaDondeEstanLasImagenes/{{empleado.imagen}}" class="empleado_imagen" />	
+	  		</div>
+	  		<div *ngIf="!empleado.imagen">
+	  			<div class="imagen_relleno">
+	  				
+	  			</div>
+	  		</div>
+
+	  			<div class="caption">
+				    {{empleado.id}}
+				    <h3>{{empleado.nombre}}
+				    {{empleado.apellidos}}</h3>
+				    <p>{{empleado.fechaNacimiento }}</p>
+				    <p>
+				     <a href="" class="btn btn-md btn-primary">Ver</a>
+				     <a href="" class="btn btn-md btn-warning">Editar</a>
+				     <a href="" class="btn btn-md btn-danger">Eliminar</a>
+				    </p>
+			    </div>
+
+		</div>
+	  </div>
+	</div>
 </div>
