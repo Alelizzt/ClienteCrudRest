@@ -1,0 +1,15 @@
+<div *ngIf="!empleado">
+	<h3>Cargando empleado ...</h3>
+</div>
+<div class="row" *ngIf="empleado">
+	<div class="col-lg-4" *ngIf="empleado.imagen">
+		<br>
+		<img src="http://localhost:8080/api/CarpetaDondeEstanLasImagenes/{{empleado.imagen}}" class="empleado_imagen" />
+	</div>
+	<div class="col-lg-8">
+		<h3>{{empleado.apellidos}} {{empleado.nombre}}</h3>
+		<p>
+			Fecha de Nacimiento: {{empleado.fechaNacimiento}}	
+		</p>
+	</div>
+</div>

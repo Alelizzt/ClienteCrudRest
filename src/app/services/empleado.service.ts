@@ -21,6 +21,9 @@
    getEmpleados(): Observable<Empleado[]>{
      return this._http.get(this.url+'empleados').map((response: Response) => <Empleado[]>response.json())._catch(this.handleError);
    }
+   getEmpleado(id){
+     return this._http.get(this.url+'empleado/'+id).map(res => res.json());
+   }
 
    addEmpleado(empleado : Empleado){
    		let json = JSON.stringify(empleado);

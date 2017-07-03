@@ -12,6 +12,7 @@ import { HomeComponent } from './components/home.component';
 import { ErrorComponent } from './components/error.component';
 import { EmpleadosListComponent } from './components/empleados-list.component';
 import { EmpleadoAddComponent } from './components/empleado-add.component';
+import { EmpleadoDetailComponent } from './components/empleado-detail.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { EmpleadoAddComponent } from './components/empleado-add.component';
     HomeComponent,
     ErrorComponent,
     EmpleadosListComponent,
-    EmpleadoAddComponent
+    EmpleadoAddComponent,
+    EmpleadoDetailComponent
   ],
   imports: [
     BrowserModule,
