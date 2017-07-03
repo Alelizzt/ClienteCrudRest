@@ -31,7 +31,7 @@ export class EmpleadoAddComponent{
   onSubmit(){
     console.log(this.empleado);
   /*  Metodo para agregar imagen
-  if(this.filesToUpload.lenght >=1){
+  if(this.filesToUpload && this.filesToUpload.lenght >=1){
     this._empleadoService.makeFileRequest(GLOBAL.url+'upload-file',[],this.filesToUpload).then((result)=>{
       console.log(result);
       this.resultUpload = result;

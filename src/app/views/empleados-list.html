@@ -25,8 +25,8 @@
 				    {{empleado.apellidos}}</h3>
 				    <p>{{empleado.fechaNacimiento }}</p>
 				    <p>
-				     <a href="/empleado/{{empleado.id}}" class="btn btn-md btn-primary">Ver</a>
-				     <a href="" class="btn btn-md btn-warning">Editar</a>
+				     <a [routerLink]="['/empleado',empleado.id]" class="btn btn-md btn-primary">Ver</a>
+				     <a [routerLink]="['/editar-empleado',empleado.id]"  class="btn btn-md btn-warning">Editar</a>
 				     <a href="" class="btn btn-md btn-danger">Eliminar</a>
 				    </p>
 			    </div>

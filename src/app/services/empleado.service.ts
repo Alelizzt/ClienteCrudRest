@@ -35,6 +35,16 @@
    		return this._http.post(this.url+'empleado', json, options).map(this.extractData)._catch(this.handleError);
    }
 
+   editEmpleado(id, empleado:Empleado){
+     let json = JSON.stringify(empleado);
+     //let params = 'json='+json; just in php 
+      let headers = new Headers({'Content-Type':'application/json'}); // in php use: 'application/x-www-form-urlencoded; charset=UTF-8'
+      let options = new RequestOptions({ headers: headers });
+
+      return this._http.put(this.url+'empleado/'+id, json, options)
+                .map(this.extractData)._catch(this.handleError);
+   }
+
    private extractData(res: Response){
      let body = res.json();
      return body.data || {};

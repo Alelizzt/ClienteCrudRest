@@ -13,6 +13,8 @@ import { ErrorComponent } from './components/error.component';
 import { EmpleadosListComponent } from './components/empleados-list.component';
 import { EmpleadoAddComponent } from './components/empleado-add.component';
 import { EmpleadoDetailComponent } from './components/empleado-detail.component';
+import { EmpleadoEditComponent } from './components/empleado-edit.component';
+
 
 @NgModule({
   declarations: [
@@ -21,7 +23,8 @@ import { EmpleadoDetailComponent } from './components/empleado-detail.component'
     ErrorComponent,
     EmpleadosListComponent,
     EmpleadoAddComponent,
-    EmpleadoDetailComponent
+    EmpleadoDetailComponent,
+    EmpleadoEditComponent
   ],
   imports: [
     BrowserModule,
