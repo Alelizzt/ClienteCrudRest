@@ -45,6 +45,10 @@
                 .map(this.extractData)._catch(this.handleError);
    }
 
+   deleteEmpleado(id){
+     return this._http.delete(this.url+'empleado/'+id).map(this.extractData);
+   }
+
    private extractData(res: Response){
      let body = res.json();
      return body.data || {};

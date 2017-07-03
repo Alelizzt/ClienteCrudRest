@@ -12,6 +12,7 @@ import { Empleado } from '../models/empleado';
 export class EmpleadosListComponent{
   public titulo:string;
   public empleados: Empleado[];
+  public confirmado;
 
   constructor(
     private _route: ActivatedRoute,
@@ -19,11 +20,15 @@ export class EmpleadosListComponent{
     private _empleadoService: EmpleadoService
   ){
     this.titulo = 'Listado de empleados';
+    this.confirmado = null;
   }
 
   ngOnInit(){
     console.log("EmpleadosListComponent cargado");
+    this.getEmpleados();    
+  }
 
+  getEmpleados(){
     this._empleadoService.getEmpleados().subscribe(
       result => {
           this.empleados = result;
@@ -33,4 +38,30 @@ export class EmpleadosListComponent{
       }
     );
   }
+
+
+  eliminarConfirm(id){
+    this.confirmado = id;
+  }
+
+  cancelarConfirm(){
+    this.confirmado = null;
+  }
+
+
+
+  onDeleteEmpleado(id){
+    this._empleadoService.deleteEmpleado(id).subscribe(
+      response =>{
+         //if else con el status
+         this.getEmpleados();
+      },
+      error =>{
+        console.error(<any>error);
+      }
+      );
+  }
+
+
+
 }

@@ -24,11 +24,19 @@
 				    <h3>{{empleado.nombre}}
 				    {{empleado.apellidos}}</h3>
 				    <p>{{empleado.fechaNacimiento }}</p>
-				    <p>
-				     <a [routerLink]="['/empleado',empleado.id]" class="btn btn-md btn-primary">Ver</a>
-				     <a [routerLink]="['/editar-empleado',empleado.id]"  class="btn btn-md btn-warning">Editar</a>
-				     <a href="" class="btn btn-md btn-danger">Eliminar</a>
-				    </p>
+				    <div class="botones" *ngIf="confirmado != empleado.id">
+					     <a [routerLink]="['/empleado',empleado.id]" class="btn btn-md btn-primary">Ver</a>
+					     <a [routerLink]="['/editar-empleado',empleado.id]"  class="btn btn-md btn-warning">Editar</a>
+					     <a (click)="eliminarConfirm(empleado.id)" class="btn btn-md btn-danger">Eliminar</a>
+				    </div>
+
+				    <div class="seguro" *ngIf="confirmado == empleado.id">
+
+				     	<a (click)="onDeleteEmpleado(empleado.id)" class="btn btn-md btn-danger">Quiero Eliminarlo</a>
+				     	
+				     	<a (click)="cancelarConfirm()" class="btn btn-md btn-warning">Cancelar</a>
+				     	
+				     </div>
 			    </div>
 
 		</div>
